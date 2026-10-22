@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNS MAKER</title>
+    <link rel="stylesheet" href="kier_fonts.css" id="stylist">
+    <link rel="icon" type="image/png" href="icon.png">
+</head>
+<body>
+    <aside>
+        <h1 id="t">SIGNS MAKER</h1>
+        <h1 id="editpanel">Edit panel</h1>
+        <form>
+            <label for="cornervalue">Corners:
+                <input type="range" min="0" max="3" step="0.5" id="cornervalue" value="1"><span class="valuespan" id="cornervaluespan">1rem</span>
+            </label> 
+            <label for="bordervalue">Borders:
+                <input type="range" min="0" max="0.7" step="0.1" id="bordervalue" value="0.3"><span class="valuespan" id="bordervaluespan">0.3rem</span>
+            </label>
+            <label for="sitefont">Font:
+                <select name="sitefont" id="sitefont">
+                    <option value="Helvetica" style="font-family: Helvetica;">Helvetica</option>
+                    <option value="Times New Roman" style="font-family: Times New Roman;">Times</option>
+                    <option value="Polish" style="font-family: Polish;">Polish</option>
+                    <option value="French" style="font-family: French;">French</option>
+                    <option value="German" style="font-family: German;">German</option>
+                    <option value="British" style="font-family: British;">British</option>
+                    <option value="Dutch" style="font-family: Dutch;">Dutch</option>
+                    <option value="Spanish" style="font-family: Spanish;">Spanish</option>
+                </select>
+            </label>
+            <label for="bolderp" class="paccheckbox" style="margin-bottom: 0 !important;" id="labelbolderp">Bolder font
+                <input type="checkbox" id="bolderp">
+                <span class="checkmark"></span>
+            </label>
+            <label for="tabchoose">Chosen sign:
+                <select name="tabchoose" id="tabchoose">
+                    <option value="none">None</option>
+                </select>
+                <img src="help.png" alt="help" title="Hover your cursor over the symbol, and its ID/number will appear. e.g. for sign with s1 ID please choose number 1" id="help">
+            </label> 
+            <label for="tabcolor">Sign colour:
+                <select name="tabcolor" id="tabcolor">
+                    <option value="blue" style="background-color: blue; color: white;">Blue</option>
+                    <option value="green" style="background-color: green; color: white;">Green</option>
+                    <option value="chocolate" style="background-color: chocolate; color: white;">Brown</option>
+                    <option value="white" style="background-color: white; color: blue;">White</option>
+                    <option value="gold" style="background-color: gold; color: black;">Yellow</option>
+                    <option value="black" style="background-color: black; color: white;">Black</option>
+                    <option value="custom" style="background-color: white; color: black;">Custom 🎨</option>
+                </select>
+            </label> 
+            <label for="tabfontcolor" id="labeltabfontcolor" style="display: none;">Font colour:
+                <select name="tabfontcolor" id="tabfontcolor">
+                    <option value="blue" style="color: blue;">Blue font</option>
+                    <option value="black" style="color: black;">Black font</option>
+                    <option value="darkred" style="color: darkred;">Red font</option>
+                    <option value="white" style="color: gray; display: none;" id="whitefont">White font</option>
+                </select>
+            </label>
+            <label for="tabcustomcolor" id="labeltabcustomcolor" style="display: none;">Backgorund colour:
+                <input type="color" name="tabcustomcolor" id="tabcustomcolor">
+            </label>
+            <button id="dodsign">Add sign</button>
+            <button id="dodmsc">Add city</button>
+            <button id="dodpac">Add city package</button>
+            <button id="dodbla">Add number</button>
+            <button id="dodaro">Add highway arrows</button>
+            <button id="dodinc">Add intersection</button>
+            <button id="dodlin">Add line</button>
+            <button id="removesign">Remove sign</button>
+        </form>
+    </aside>
+
+    <main>
+        
+        <button id="start">
+            Create first sign
+        </button>
+        
+    </main>
+
+    <section id="secdodbla">
+        <h1 style="margin: 0;">Add number</h1>
+        <form>
+            <label for="blanum">Number: 
+                <input type="text" id="blanum" name="blanum">
+            </label>
+             
+            <label for="blaposition">Position: 
+                <select name="blaposition" id="blaposition">
+                    <option value="top">Top</option>
+                    <option value="btm">Bottom</option>
+                </select>
+            </label>
+             
+            <label for="blakat">Category: 
+                <select name="blakat" id="blakat">
+                    <option value="k" style="background-color: red; color: white;">Country</option>
+                    <option value="w" style="background-color: gold; color: black;">Regional</option>
+                    <option value="e" style="background-color: green; color: white;">European</option>
+                    <option value="c">🎨 Custom</option>
+                </select>
+            </label>
+            <div id="cusdiv">
+                <label for="cusbgc">Background colour:
+                    <input type="color" id="cusbgc" name="cusbgc">
+                </label>
+                 
+                <label for="cuscol">Font colour: 
+                    <select name="cuscol" id="cuscol">
+                        <option value="white">white</option>
+                        <option value="black">black</option>
+                        <option value="gold">gold</option>
+                        <option value="red">red</option>
+                        <option value="blue">blue</option>
+                    </select>
+                </label>
+                 
+                <label for="cusbor">Border colour: 
+                    <select name="cusbor" id="cusbor">
+                        <option value="white">white</option>
+                        <option value="black">black</option>
+                        <option value="gold">gold</option>
+                        <option value="red">red</option>
+                        <option value="blue">blue</option>
+                    </select>
+                </label>
+                 
+                <label for="cusshape">Shape:
+                    <select id="cusshape" name="cusshape">
+                        <option value="cusrec">Rectangle</option>
+                        <option value="cuskol">Circle</option>
+                        <option value="cushex">Hexagon</option>
+                    </select>
+                </label>
+            </div>
+            <div class="formbuttons">
+                <button id="zatbla" class="sectionbuttonzat">Submit</button>
+                <button id="cancelbla" class="sectionbuttoncancel">Cancel</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="secdodmsc">
+        <h1 style="margin: 0;">Add city</h1>
+        <form>
+            <div>
+                <h2 style="margin: 0; font-size: 100%;">City settings:</h2>
+                <label for="mscname">Name: 
+                    <input type="text" id="mscname" name="mscname">
+                </label>
+                 
+                <label for="msctype">Type:
+                    <select id="msctype" name="msctype">
+                        <option value="none">Standard</option>
+                        <option value="district">District</option>
+                        <option value="airport">Airport</option>
+                        <option value="harbour">Harbour</option>
+                        <option value="abroad">Abroad</option>
+                        <option value="tourist">Toutist facilities</option>
+                        <option value="black">Black and white</option>
+                        <option value="yellow">Yellow</option>
+                    </select>
+                    <input type="text" id="carcode" class="carcode" placeholder="car code">
+                    <input type="text" id="districtname" class="districtname" placeholder="district name">
+                </label>
+            </div>
+            <button type="button" id="mscdodnumbtn" class="mscdodbtn">Add number</button>
+            <div id="mscdodnumdiv" style="display: none;">
+                <h2 style="margin: 0; font-size: 100%;">Number settings:</h2>
+                <label for="bladalnum">Number: 
+                    <input type="text" id="bladalnum" name="bladalnum">
+                </label>
+                 
+                <label for="bladalkat">Category: 
+                    <select name="bladalkat" id="bladalkat">
+                        <option value="k" style="background-color: red; color: white;">Country</option>
+                        <option value="w" style="background-color: gold; color: black;">Regional</option>
+                        <option value="e" style="background-color: green; color: white;">European</option>
+                        <option value="c">🎨 Custom</option>
+                    </select>
+                </label>
+                <div id="cusdaldiv">
+                    <label for="cusdalbgc">Background colour:
+                        <input type="color" id="cusdalbgc" name="cusdalbgc">
+                    </label>
+                     
+                    <label for="cusdalcol">Font colour: 
+                        <select name="cusdalcol" id="cusdalcol">
+                            <option value="white">white</option>
+                            <option value="black">black</option>
+                            <option value="gold">gold</option>
+                            <option value="red">red</option>
+                            <option value="blue">blue</option>
+                        </select>
+                    </label>
+                     
+                    <label for="cusdalbor">Border colour: 
+                        <select name="cusdalbor" id="cusdalbor">
+                            <option value="white">white</option>
+                            <option value="black">black</option>
+                            <option value="gold">gold</option>
+                            <option value="red">red</option>
+                            <option value="blue">blue</option>
+                        </select>
+                    </label>
+                     
+                    <label for="cusdalshape">Shape:
+                        <select id="cusdalshape" name="cusdalshape">
+                            <option value="cusdalrec">Rectangle</option>
+                            <option value="cusdalkol">Circle</option>
+                            <option value="cusdalhex">Hexagon</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <button type="button" id="mscdodarobtn" class="mscdodbtn">Add arrow</button>
+            <div id="mscdodarodiv" style="display: none;">
+                <h2 style="margin: 0; font-size: 100%;">Arrow settings:</h2>
+                <label for="mscarodirection">Direction:
+                    <select id="mscarodirection" name="mscarodirection">
+                        <option value="none">None</option>
+                        <option value="up">Up</option>
+                        <option value="down">Down</option>
+                        <option value="left">Left</option>
+                        <option value="right">Right</option>
+                        <option value="leftup">Left Up</option>
+                        <option value="rightup">Right Up</option>
+                        <option value="leftdown">Left Down</option>
+                        <option value="rightdown">Right Down</option>
+                    </select>
+                </label>
+                 
+                <label for="mscaroposition">Position:
+                    <select id="mscaroposition" name="mscaroposition">
+                        <option value="none">None</option>
+                        <option value="leftside">Left Side</option>
+                        <option value="rightside">Right Side</option>
+                        <option value="bothsides">Both Sides</option>
+                    </select>
+                </label>
+                 
+                <label for="mscarocolor">Colour:
+                    <select id="mscarocolor" name="mscarocolor">
+                        <option value="none">None</option>
+                        <option value="W">White</option>
+                        <option value="K">Black</option>
+                        <option value="R">Red</option>
+                        <option value="B">Blue</option>
+                    </select>
+                </label>
+                 
+                <label for="mscarotype">Type:
+                    <select id="mscarotype" name="mscarotype">
+                        <option value="none">None</option>
+                        <option value="a1">Arrow 1</option>
+                        <option value="a2">Arrow 2</option>
+                        <option value="a3">Arrow 3</option>
+                        <option value="Y">Yellow</option>
+                    </select>
+                </label>
+            </div>
+            <div class="formbuttons">
+                <button id="zatmsc" class="sectionbuttonzat">Submit</button>
+                <button id="cancelmsc" class="sectionbuttoncancel">Cancel</button>
+            </div>
+        </form>
+    </section>
+
+
+    <section id="secdodpac" style="display: none;">
+        <h1 style="margin: 0;">Add city package</h1>
+        <form id="pacform">
+            <div id="paccitiescontainer">
+                <div class="paccityblock">
+                    <label>City name: 
+                        <input type="text" class="paccityname" name="paccityname">
+                    </label>
+                    <label>Type:
+                        <select class="pacmsctype" name="pacmsctype">
+                            <option value="none">Standard</option>
+                            <option value="district">District</option>
+                            <option value="airport">Airport</option>
+                            <option value="harbour">Harbour</option>
+                            <option value="abroad">Abroad</option>
+                            <option value="tourist">Tourist facilities</option>
+                            <option value="black">Black and white</option>
+                            <option value="yellow">Yellow</option>
+                        </select>
+                        <input type="text" class="paccarcode" placeholder="car code" style="display: none;">
+                        <input type="text" class="pacdistrictname" placeholder="district name" style="display: none;">
+                    </label>
+                </div>
+            </div>
+            <button type="button" id="pacdodbtn" class="pacdodbtn">Add city</button><br><br>
+            
+            <label for="pacbgcolor">Background:
+                <select id="pacbgcolor" name="pacbgcolor">
+                    <option value="s">Same as sign</option>
+                    <option value="blue" style="background-color: blue; color: white;">Blue</option>
+                    <option value="green" style="background-color: green; color: white;">Green</option>
+                    <option value="chocolate" style="background-color: chocolate; color: white;">Brown</option>
+                    <option value="white" style="background-color: white; color: blue;">White</option>
+                    <option value="gold" style="background-color: gold; color: black;">Yellow</option>
+                    <option value="black" style="background-color: black; color: white;">Black</option>
+                    <option value="custom" style="background-color: white; color: black;">Custom 🎨</option>
+                </select>
+            </label>
+            
+            <div id="paccusbgdiv" style="display: none;">
+                <label for="pacfontcolor" id="labelpacfontcolor">Font colour:
+                    <select name="pacfontcolor" id="pacfontcolor">
+                        <option value="blue" style="color: blue;">Blue font</option>
+                        <option value="black" style="color: black;">Black font</option>
+                        <option value="darkred" style="color: darkred;">Red font</option>
+                        <option value="white" style="color: gray; display: none;" id="pacwhitefont">White font</option>
+                    </select>
+                </label>
+                <label for="paccustomcolor" id="labelpaccustomcolor">Custom colour:
+                    <input type="color" name="paccustomcolor" id="paccustomcolor">
+                </label>
+            </div><br>
+
+            <label>1st number: <input type="text" id="pacnum1" name="pacnum1" placeholder="if not leave empty"></label>
+            <label>Type:
+                <select class="pacnumkat" id="pacnum1kat">
+                    <option value="k" style="background-color: red; color: white;">Country</option>
+                    <option value="w" style="background-color: gold; color: black;">Regional</option>
+                    <option value="e" style="background-color: green; color: white;">European</option>
+                    <option value="c">🎨 Custom</option>
+                </select>
+            </label>
+            
+            <div id="paccusnum1div" class="paccusnumdiv" style="display: none;">
+                <label>Background colour: <input type="color" class="paccusdalbgc"></label>
+                <label>Font colour:
+                    <select class="paccusdalcol">
+                        <option value="white">white</option>
+                        <option value="black">black</option>
+                        <option value="gold">gold</option>
+                        <option value="red">red</option>
+                        <option value="blue">blue</option>
+                    </select>
+                </label>
+                <label>Border colour:
+                    <select class="paccusdalbor">
+                        <option value="white">white</option>
+                        <option value="black">black</option>
+                        <option value="gold">gold</option>
+                        <option value="red">red</option>
+                        <option value="blue">blue</option>
+                    </select>
+                </label>
+                <label>Shape:
+                    <select class="paccusdalshape">
+                        <option value="cusdalrec">Rectangle</option>
+                        <option value="cusdalkol">Circle</option>
+                        <option value="cusdalhex">Hexagon</option>
+                    </select>
+                </label>
+                <br>
+            </div>
+            
+            <label>2nd number: <input type="text" id="pacnum2" name="pacnum2" placeholder="if not leave empty"></label>
+            <label>Type:
+                <select class="pacnumkat" id="pacnum2kat">
+                    <option value="k" style="background-color: red; color: white;">Country</option>
+                    <option value="w" style="background-color: gold; color: black;">Regional</option>
+                    <option value="e" style="background-color: green; color: white;">European</option>
+                    <option value="c">🎨 Custom</option>
+                </select>
+            </label>
+
+            <div id="paccusnum2div" class="paccusnumdiv" style="display: none;">
+                <label>Background colour: <input type="color" class="paccusdalbgc"></label>
+                <label>Font colour:
+                    <select class="paccusdalcol">
+                        <option value="white">white</option>
+                        <option value="black">black</option>
+                        <option value="gold">gold</option>
+                        <option value="red">red</option>
+                        <option value="blue">blue</option>
+                    </select>
+                </label>
+                <label>Border colour:
+                    <select class="paccusdalbor">
+                        <option value="white">white</option>
+                        <option value="black">black</option>
+                        <option value="gold">gold</option>
+                        <option value="red">red</option>
+                        <option value="blue">blue</option>
+                    </select>
+                </label>
+                <label>Shape:
+                    <select class="paccusdalshape">
+                        <option value="cusdalrec">Rectangle</option>
+                        <option value="cusdalkol">Circle</option>
+                        <option value="cusdalhex">Hexagon</option>
+                    </select>
+                </label>
+            </div>
+            <br>
+            <label for="pacborder" class="paccheckbox">
+                Add border<input type="checkbox" id="pacborder" name="pacborder">
+                <span class="checkmark"></span>
+            </label>
+            <div class="formbuttons">
+                <button type="button" id="zatpac" class="sectionbuttonzat">Submit</button>
+                <button type="button" id="cancelpac" class="sectionbuttoncancel">Cancel</button>
+            </div>
+        </form>
+    </section>
+
+
+    <section id="secdodinc">
+        <h1 style="margin: 0;">Choose intersection</h1>
+        <form>
+            <label for="incnum">Number or name: 
+                <input type="text" id="incnum" name="incnum">
+            </label>
+             
+            <label for="incbgcolor">Background colour:
+                <select id="incbgcolor" name="incbgcolor">
+                    <option value="s">Same as sign</option>
+                    <option value="blue" style="background-color: blue; color: white;">Blue</option>
+                    <option value="green" style="background-color: green; color: white;">Green</option>
+                    <option value="chocolate" style="background-color: chocolate; color: white;">Brown</option>
+                    <option value="white" style="background-color: white; color: blue;">White</option>
+                    <option value="gold" style="background-color: gold; color: black;">Yellow</option>
+                    <option value="black" style="background-color: black; color: white;">Black</option>
+                    <option value="custom" style="background-color: white; color: black;">Custom 🎨</option>
+                </select>
+            </label>
+             
+            <label for="incfontcolor" id="labelincfontcolor" style="display: none;">Font colour:
+                <select name="incfontcolor" id="incfontcolor">
+                    <option value="blue" style="color: blue;">Blue font</option>
+                    <option value="black" style="color: black;">Black font</option>
+                    <option value="darkred" style="color: darkred;">Red font</option>
+                    <option value="white" style="color: gray; display: none;" id="incwhitefont">White font</option>
+                </select>
+            </label>
+            <label for="inccustomcolor" id="labelinccustomcolor" style="display: none;">Custom colour:
+                <input type="color" name="inccustomcolor" id="inccustomcolor">
+            </label>
+            <label for="inccorners">Corners:
+                <select id="inccorners" name="inccorners">
+                    <option value="sharp">Regular</option>
+                    <option value="rounded">Rounded</option>
+                </select>
+            </label>
+             
+            <label for="incposition">Position:
+                <select id="incposition" name="incposition">
+                    <option value="lefttop">Left top</option>
+                    <option value="righttop">Right top</option>
+                    <option value="fulltop">Full top</option>
+                    <option value="leftbottom">Left bottom</option>
+                    <option value="rightbottom">Right bottom</option>
+                    <option value="fullbottom">Full bottom</option>
+                </select>
+            </label>
+            <label for="incFullJustify" id="labelincFullJustify" style="display: none;">Text align:
+                <select id="incFullJustify" name="incFullJustify">
+                    <option value="center">Center</option>
+                    <option value="start">Left</option>
+                    <option value="end">Right</option>
+                </select>
+            </label>
+            <div id="divinctype">
+                <label class="radio-item">
+                    <p class="labimage">No pictogram</p>
+                    <input type="radio" id="noneinc" name="inctype" checked>
+                </label>
+                <label class="radio-item">
+                    <img src="wezel/wezelK.png" alt="wezel" class="labimage">
+                    <input type="radio" id="wezel" name="inctype">
+                </label>
+                <label class="radio-item">
+                    <img src="zjazd/zjazdK.png" alt="zjazd" class="labimage">
+                    <input type="radio" id="zjazd" name="inctype">
+                </label>
+            </div>
+            <div class="formbuttons">
+                <button id="zatinc" class="sectionbuttonzat">Submit</button>
+                <button id="cancelinc" class="sectionbuttoncancel">Cancel</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="secdodaro">
+        <h1 style="margin: 0;">Add highway arrows</h1>
+        <form>
+            <label for="arotype">Arrow type:
+                <select id="arotype" name="arotype">
+                    <option value="h1">Highway 1</option>
+                    <option value="h2">Highway 2</option>
+                    <option value="h3">Highway 3</option>
+                </select>
+            </label>
+            <label for="arodirection">Direction:
+                <select id="arodirection" name="arodirection">
+                    <option value="up">Up</option>
+                    <option value="down">Down</option>
+                    <option value="leftup">Left Up</option>
+                    <option value="leftdown">Left Down</option>
+                    <option value="rightup">Right Up</option>
+                    <option value="rightdown">Right Down</option>
+                </select>
+            </label>
+            <label for="aronum">Number of arrows
+                <input type="number" id="aronum" name="aronum" min="1" max="50" style="width: 3em;">
+            </label>
+            <label for="aroplacement" id="labelaroplacement">Placement:
+                <select id="aroplacement" name="aroplacement">
+                    <option value="cen">Bottom Center</option>
+                    <option value="cor">Bottom Corners</option>
+                </select>
+            </label>
+            <label for="aroside" id="labelaroside" style="display: none;">Side:
+                <select id="aroside" name="aroside">
+                    <option value="left">Left</option>
+                    <option value="right">Right</option>
+                </select>
+            </label>
+            <div class="formbuttons">
+                <button id="zataro" class="sectionbuttonzat">Submit</button>
+                <button id="cancelaro" class="sectionbuttoncancel">Cancel</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="seddodsign" style="display: none;">
+        <h1 style="margin: 0;">Add sign</h1>
+        <form>
+            <label for="nextsignpoint">Reference point
+                <select id="nextsignpoint" name="nextsignpoint">
+                    <option value="none">None</option>
+                </select>
+            </label>
+            <label for="nextsignposition">Position:
+                <select id="nextsignposition" name="nextsignposition">
+                    <option value="right">Right side</option>
+                    <option value="left">Left side</option>
+                    <option value="above">Above</option>
+                    <option value="under">Under</option>
+                </select>
+            </label>
+            <label for="nextsignalign" id="labelnextsignalign" style="display: none;">Alignment
+                <select id="nextsignalign" name="nextsignalign">
+                    <option value="right">Right side</option>
+                    <option value="center">Center</option>
+                    <option value="left">Left side</option>
+                </select>
+            </label>
+            <div class="formbuttons">
+                <button id="zatsign" class="sectionbuttonzat">Submit</button>
+                <button id="cancelsign" class="sectionbuttoncancel">Cancel</button>
+            </div>
+        </form>
+    </section>
+
+    <script src="kier.js"></script>
+</body>
+</html>
